@@ -116,7 +116,78 @@ href="cafe.css">
 </nav>
 
 <!-- HERO -->
+<!-- MENU PRODUK -->
 
+<section class="menu-section" id="menu">
+
+<h2 class="title">
+🔥 Best Seller Menu
+</h2>
+
+<div class="product-container">
+
+<div class="product-card">
+<img src="uts1.jpg">
+
+<h3>Cappuccino Coffee</h3>
+
+<p class="price">
+Rp 25.000
+</p>
+
+<button>
+Order Now
+</button>
+</div>
+
+
+<div class="product-card">
+<img src="uts5.jpg">
+
+<h3>Cheese Burger</h3>
+
+<p class="price">
+Rp 35.000
+</p>
+
+<button>
+Order Now
+</button>
+</div>
+
+
+<div class="product-card">
+<img src="uts4.jpg">
+
+<h3> Chocolate Cake</h3>
+
+<p class="price">
+Rp 40.000
+</p>
+
+<button>
+Order Now
+</button>
+</div>
+
+
+<div class="product-card">
+<img src="uts3.jpg">
+
+<h3>Mini Pizza</h3>
+
+<p class="price">
+Rp 45.000
+</p>
+
+<button>
+Order Now
+</button>
+</div>
+
+</div>
+
+</section>
 <section class="hero" id="home">
 
 <div class="hero-text">
