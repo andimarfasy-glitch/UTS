@@ -1,3 +1,4 @@
+
 html{
     scroll-behavior:smooth;
 }
@@ -6,53 +7,66 @@ html{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
     background:#f5f5f5;
 }
 
-/* NAVBAR */
-
-nav{
-    background:#6f4e37;
-    color:white;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    position:sticky;
-    top:0;
-}
-
-.logo{
-    font-size:30px;
-    font-weight:bold;
-}
-
-.menu a{
-    text-decoration:none;
-    color:white;
-    margin-left:25px;
-    transition:.3s;
-}
+/* ======================
 
 .menu a:hover{
     color:#ffd700;
 }
 
-/* HERO */
+/* ======================
+   HERO
+====================== */
+/* NAVBAR */
 
+nav{
+    background:#4E342E;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+.logo{
+    color:white;
+    font-size:42px;
+    font-weight:bold;
+}
+
+.menu{
+    display:flex;
+    gap:40px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#FFD54F;
+}
 .hero{
-    height:400px;
+    height:500px;
 
     background:
     linear-gradient(
-    rgba(0,0,0,.5),
-    rgba(0,0,0,.5)
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.5)
     ),
-
     url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085');
 
     background-size:cover;
@@ -66,23 +80,27 @@ nav{
     color:white;
 }
 
-.hero h1{
-    font-size:55px;
+.hero-text h1{
+    font-size:60px;
+    margin-bottom:15px;
 }
 
-.hero p{
-    margin-top:10px;
-    font-size:20px;
+.hero-text p{
+    font-size:22px;
 }
 
-/* CONTAINER */
+/* ======================
+   CONTAINER
+====================== */
 
 .container{
     width:90%;
     margin:50px auto;
 }
 
-/* CARD */
+/* ======================
+   CARD
+====================== */
 
 .card{
     background:white;
@@ -91,15 +109,17 @@ nav{
     margin-bottom:40px;
 
     box-shadow:
-    0 5px 15px
-    rgba(0,0,0,.1);
+    0 5px 20px rgba(0,0,0,.1);
 }
 
 .card h2{
     margin-bottom:20px;
+    color:#6f4e37;
 }
 
-/* FORM */
+/* ======================
+   FORM
+====================== */
 
 input{
     width:100%;
@@ -107,6 +127,12 @@ input{
     margin-bottom:15px;
     border:1px solid #ddd;
     border-radius:10px;
+    font-size:16px;
+}
+
+input:focus{
+    outline:none;
+    border:1px solid #6f4e37;
 }
 
 button{
@@ -115,6 +141,7 @@ button{
     border-radius:10px;
     cursor:pointer;
     color:white;
+    font-size:16px;
 }
 
 .btn-save{
@@ -125,7 +152,93 @@ button{
     background:#ff9800;
 }
 
-/* PRODUK */
+.btn-save:hover{
+    background:#218838;
+}
+
+.btn-update:hover{
+    background:#e68900;
+}
+
+/* ======================
+   BEST SELLER
+====================== */
+
+.menu-section{
+    width:90%;
+    margin:60px auto;
+}
+
+.title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:40px;
+    color:#5c3b28;
+}
+
+.product-container{
+    display:grid;
+    grid-template-columns:
+    repeat(4, 1fr);
+
+    gap:30px;
+    width:90%;
+    margin:auto;
+}
+.product-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+    transition:.3s;
+    text-align:center;
+
+    width:100%;
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+}
+
+.product-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.product-card h3{
+    margin-top:15px;
+    font-size:24px;
+}
+
+.price{
+    color:#795548;
+    font-size:24px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.product-card button{
+    width:85%;
+    margin:20px;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#6D4C41;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.product-card button:hover{
+    background:#4E342E;
+}
+
+/* ======================
+   PRODUK DATABASE
+====================== */
 
 .produk-grid{
     display:grid;
@@ -167,8 +280,18 @@ button{
     margin-top:15px;
 }
 
+.produk-card h4{
+    color:#8B4513;
+}
+
+/* ======================
+   BUTTON CRUD
+====================== */
+
 .aksi{
     padding:20px;
+    display:flex;
+    gap:10px;
 }
 
 .btn-edit{
@@ -187,11 +310,22 @@ button{
     text-decoration:none;
 }
 
-/* TABLE */
+.btn-edit:hover{
+    background:#e0a800;
+}
+
+.btn-delete:hover{
+    background:#c82333;
+}
+
+/* ======================
+   TABLE
+====================== */
 
 table{
     width:100%;
     border-collapse:collapse;
+    overflow:hidden;
 }
 
 table th{
@@ -201,16 +335,44 @@ table th{
 }
 
 table td{
+    background:white;
     padding:15px;
     text-align:center;
     border-bottom:1px solid #ddd;
 }
 
-/* FOOTER */
+/* ======================
+   FOOTER
+====================== */
 
 footer{
     background:#222;
     color:white;
     text-align:center;
     padding:20px;
+    margin-top:40px;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .menu a{
+        margin:0 10px;
+    }
+
+    .hero-text h1{
+        font-size:40px;
+    }
+
+    .hero-text p{
+        font-size:18px;
+    }
 }

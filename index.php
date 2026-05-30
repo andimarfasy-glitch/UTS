@@ -103,15 +103,15 @@ href="cafe.css">
 
 <nav>
 
-<div class="logo">
-☕ CafeStore
-</div>
+    <div class="logo">
+        ☕ CafeStore
+    </div>
 
-<div class="menu">
-<a href="#home">Home</a>
-<a href="#menu">Menu</a>
-<a href="#data">Data</a>
-</div>
+    <div class="menu">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#data">Data</a>
+    </div>
 
 </nav>
 
