@@ -114,80 +114,6 @@ href="cafe.css">
     </div>
 
 </nav>
-
-<!-- HERO -->
-<!-- MENU PRODUK -->
-
-<section class="menu-section" id="menu">
-
-<h2 class="title">
-🔥 Best Seller Menu
-</h2>
-
-<div class="product-container">
-
-<div class="product-card">
-<img src="uts1.jpg">
-
-<h3>Cappuccino Coffee</h3>
-
-<p class="price">
-Rp 25.000
-</p>
-
-<button>
-Order Now
-</button>
-</div>
-
-
-<div class="product-card">
-<img src="uts5.jpg">
-
-<h3>Cheese Burger</h3>
-
-<p class="price">
-Rp 35.000
-</p>
-
-<button>
-Order Now
-</button>
-</div>
-
-
-<div class="product-card">
-<img src="uts4.jpg">
-
-<h3> Chocolate Cake</h3>
-
-<p class="price">
-Rp 40.000
-</p>
-
-<button>
-Order Now
-</button>
-</div>
-
-
-<div class="product-card">
-<img src="uts2.jpg">
-
-<h3>Mini Pizza</h3>
-
-<p class="price">
-Rp 45.000
-</p>
-
-<button>
-Order Now
-</button>
-</div>
-
-</div>
-
-</section>
 <section class="hero" id="home">
 
 <div class="hero-text">
@@ -203,12 +129,79 @@ Best Cafe!!
 </div>
 
 </section>
+<section class="menu-section" id="menu">
+
+<h2 class="title">
+🔥 Best Seller Menu
+</h2>
+
+<div class="product-container">
+
+    <div class="product-card">
+        <img src="uts1.jpg">
+
+        <h3>Cappuccino Coffee</h3>
+
+        <p class="price">
+            Rp 25.000
+        </p>
+
+        <button onclick="pesan('Cappuccino Coffee')">
+            Order Now
+        </button>
+    </div>
+
+    <div class="product-card">
+        <img src="uts5.jpg">
+
+        <h3>Cheese Burger</h3>
+
+        <p class="price">
+            Rp 35.000
+        </p>
+
+        <button onclick="pesan('Cheese Burger')">
+            Order Now
+        </button>
+    </div>
+
+    <div class="product-card">
+        <img src="uts4.jpg">
+
+        <h3>Chocolate Cake</h3>
+
+        <p class="price">
+            Rp 40.000
+        </p>
+
+        <button onclick="pesan('Chocolate Cake')">
+            Order Now
+        </button>
+    </div>
+
+    <div class="product-card">
+        <img src="uts2.jpg">
+
+        <h3>Mini Pizza</h3>
+
+        <p class="price">
+            Rp 45.000
+        </p>
+
+        <button onclick="pesan('Mini Pizza')">
+            Order Now
+        </button>
+    </div>
+
+</div>
+
+</section>
 
 <div class="container">
 
 <!-- FORM -->
 
-<div class="card" id="menu">
+<div class="card" id="crud">
 
 <h2>
 <?= isset($dataEdit)
@@ -308,64 +301,63 @@ Tambah Menu
 
 <!-- PRODUK -->
 
+<h2 class="title">
+☕ Menu Cafe Kami
+</h2>
+
 <div class="produk-grid">
 
 <?php
 
-$query =
-mysqli_query(
+$query = mysqli_query(
 $conn,
 "SELECT * FROM produk"
 );
 
-while(
-$row =
-mysqli_fetch_assoc($query)
-){
+while($row = mysqli_fetch_assoc($query)){
 
 ?>
 
 <div class="produk-card">
 
-<img src="<?= $row['gambar']; ?>">
+    <img
+    src="<?= $row['gambar']; ?>"
+    alt="<?= $row['nama_produk']; ?>">
 
-<h3>
-<?= $row['nama_produk']; ?>
-</h3>
+    <h3>
+    <?= $row['nama_produk']; ?>
+    </h3>
 
-<p>
-<?= $row['kategori']; ?>
-</p>
+    <p>
+    <?= $row['kategori']; ?>
+    </p>
 
-<h4>
-Rp <?= $row['harga']; ?>
-</h4>
+    <h4>
+    Rp <?= number_format($row['harga'],0,',','.'); ?>
+    </h4>
 
-<div class="aksi">
+    <button
+    type="button"
+    onclick="pesan('<?= $row['nama_produk']; ?>')">
+    Order Now
+    </button>
 
-<a
-href="index.php?edit=
-<?= $row['id']; ?>#menu"
+    <div class="aksi">
 
-class="btn-edit">
+        <a
+        href="index.php?edit=<?= $row['id']; ?>#crud"
+        class="btn-edit">
+        Edit
+        </a>
 
-Edit
-</a>
+        <a
+        href="index.php?hapus=<?= $row['id']; ?>"
+        class="btn-delete"
+        onclick="return confirm('Hapus data ini?')">
+        Hapus
+        </a>
 
-<a
-href="index.php?hapus=
-<?= $row['id']; ?>"
-
-class="btn-delete"
-
-onclick=
-"return confirm(
-'Hapus data ini?')">
-
-Hapus
-</a>
-
-</div>
+    </div>
 
 </div>
 
@@ -425,6 +417,12 @@ mysqli_fetch_assoc($query2)
 <footer>
 © 2026 CafeStore
 </footer>
+<script>
 
+function pesan(namaProduk){
+    alert("Pesanan berhasil ditambahkan ☕\nMenu: " + namaProduk);
+}
+
+</script>
 </body>
 </html>
