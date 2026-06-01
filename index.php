@@ -172,7 +172,7 @@ Order Now
 
 
 <div class="product-card">
-<img src="uts3.jpg">
+<img src="uts2.jpg">
 
 <h3>Mini Pizza</h3>
 
@@ -197,8 +197,7 @@ Cafe & Food Store
 </h1>
 
 <p>
-Website E-Commerce Cafe
-Dengan CRUD PHP & MySQL
+Best Cafe!!
 </p>
 
 </div>
